@@ -1,0 +1,9 @@
+<div>
+	<div ng-repeat='item in ctrl.foundItems'>
+		<h2> {{ item.name }} </h2>
+		<h3> {{ item.short_name }} </h3>
+		<p> {{ item.description }} </p>
+		<input type="button" ng-click='ctrl.onRemove({index: $index})' value="I Don't Want This!">
+	</div>
+	<div ng-if='ctrl.onEmpty'> {{ ctrl.onEmpty }} </div>
+</div>
