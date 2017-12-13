@@ -2,7 +2,8 @@
 "use strict";
 
 angular.module('common')
-.service('MenuService', MenuService);
+.service('MenuService', MenuService)
+.constant('ApiPath', 'https://ychaikin-course5.herokuapp.com');
 
 
 MenuService.$inject = ['$http', 'ApiPath'];
