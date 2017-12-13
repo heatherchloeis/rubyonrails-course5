@@ -4,12 +4,12 @@
 	<form name="signup" novalidate>
 		<div class="form-group">
 			<label for="first">First Name</label>
-			<input type="text" name="first" class="form-control" placeholder="First Name" required ng-model="signupCtrl.info.first" pattern="[a-zA-Z]+">
+			<input type="text" name="first" class="form-control" placeholder="First Name" required ng-model="signupCtrl.info.first">
 			<span ng-if="signupCtrl.first.$invalid && signup.first.$touched">First Name Required</span>
 		</div>
 		<div class="form-group">
 			<label for="last">Last Name</label>
-			<input type="text" name="last" class="form-control" placeholder="Last Name" required ng-model="signupCtrl.info.last" pattern="[a-zA-Z]+">
+			<input type="text" name="last" class="form-control" placeholder="Last Name" required ng-model="signupCtrl.info.last">
 			<span ng-if="signupCtrl.last.$invalid && signup.last.$touched">Last Name Required</span>
 		</div>
 		<div class="form-group">
