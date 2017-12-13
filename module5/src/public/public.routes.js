@@ -44,11 +44,13 @@ function routeConfig ($stateProvider) {
     .state('public.signup', {
       url: '/signup',
       templateUrl: 'src/public/signup/signup.html',
+      controller: 'SignUpController',
       controllerAs: 'signupCtrl'
     })
     .state('public.info', {
       url: '/info',
       templateUrl: 'src/public/info/info.html',
+      controller: 'InfoController',
       controllerAs: 'infoCtrl',
       resolve: {
         info: ['InfoService', function(InfoService) {

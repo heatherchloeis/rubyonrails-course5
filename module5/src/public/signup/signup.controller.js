@@ -10,9 +10,9 @@
 
 		$ctrl.submit = function() {
 			MenuService.getMenuItem($ctrl.info.fav)
-			.then(function(responce) {
+			.then(function(response) {
 				$ctrl.invalidFav = false;
-				$ctrl.submitted= true;
+				$ctrl.submitted = true;
 				InfoService.setInfo($ctrl.info);
 			}).catch(function() {
 				$ctrl.invalidFav = true;
