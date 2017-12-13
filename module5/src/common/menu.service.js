@@ -2,8 +2,7 @@
 "use strict";
 
 angular.module('common')
-.service('MenuService', MenuService)
-.constant('ApiPath', 'https://ychaikin-course5.herokuapp.com');
+.service('MenuService', MenuService);
 
 
 MenuService.$inject = ['$http', 'ApiPath'];
@@ -29,7 +28,7 @@ function MenuService($http, ApiPath) {
   };
 
   service.getMenuItem = function (shortName) {
-    var url = ApiPath = "/menu_items" + shortName + ".json";
+    var url = ApiPath = "/menu_items/" + shortName + ".json";
     return $http.get(url).then(function(response) {
         return response.data;
     })
