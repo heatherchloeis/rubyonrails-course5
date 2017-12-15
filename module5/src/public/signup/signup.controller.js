@@ -1,31 +1,39 @@
-(function() {
-	'use strict';
-	angular.module('public')
-	.controller('SignUpController', SignUpController);
+(function () {
+"use strict";
 
-	SignUpController.$inject = ['MenuService', 'InfoService'];
-	function SignUpController(MenuService, InfoService) {
-		var $ctrl = this;
-		$ctrl.info = {};
+angular.module('public')
+.controller('SignUpController', SignUpController);
 
-		$ctrl.submit = function() {
-			MenuService.getMenuItem($ctrl.info.fav)
-			.then(function(response) {
-				$ctrl.invalidFav = false;
-				$ctrl.submitted = true;
-				InfoService.setInfo($ctrl.info);
-			}).catch(function() {
-				$ctrl.invalidFav = true;
-			})
-		};
+SignUpController.$inject = ['MenuService', 'MyInfoService'];
+function SignUpController(MenuService, MyInfoService) {
+  var $ctrl = this;
+  $ctrl.info = {};
 
-		$ctrl.validateFav = function() {
-			MenuService.getMenuItem($ctrl.info.fav)
-			.then(function() {
-				$ctrl.invalidFav = false;
-			}).catch(function() {
-				$ctrl.invalidFav = true;
-			})
-		};
-	}
+  $ctrl.submit = function() {
+      MenuService.getMenuItem($ctrl.info.favorite)
+        .then(function(response) {
+          $ctrl.invalidFavorite = false;
+          $ctrl.submitted = true;
+          MyInfoService.setInfo($ctrl.info);
+        })
+        .catch(function() {
+          $ctrl.invalidFavorite = true;
+        });
+
+
+    }
+
+    $ctrl.validateFavorite = function() {
+      MenuService.getMenuItem($ctrl.info.favorite)
+        .then(function () {
+          $ctrl.invalidFavorite = false;
+        })
+        .catch(function() {
+          $ctrl.invalidFavorite = true;
+        });
+    }
+
+  };
+
+
 })();

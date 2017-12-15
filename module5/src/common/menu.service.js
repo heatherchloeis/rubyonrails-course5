@@ -29,10 +29,13 @@ function MenuService($http, ApiPath) {
 
   service.getMenuItem = function (shortName) {
     var url = ApiPath + "/menu_items/" + shortName + ".json";
-    return $http.get(url).then(function(response) {
+    return $http.get(url).then(
+      function (response) {
         return response.data;
-    })
-  };
+      }
+    );
+  }
+
 }
 
 

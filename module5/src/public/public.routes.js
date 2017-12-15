@@ -12,7 +12,7 @@ function routeConfig ($stateProvider) {
   // Routes
   $stateProvider
     .state('public', {
-      abstract: true,
+      absract: true,
       templateUrl: 'src/public/public.html'
     })
     .state('public.home', {
@@ -45,16 +45,16 @@ function routeConfig ($stateProvider) {
       url: '/signup',
       templateUrl: 'src/public/signup/signup.html',
       controller: 'SignUpController',
-      controllerAs: 'signupCtrl'
+      controllerAs: 'signUpCtrl'
     })
-    .state('public.info', {
-      url: '/info',
-      templateUrl: 'src/public/info/info.html',
-      controller: 'InfoController',
-      controllerAs: 'infoCtrl',
+    .state('public.myinfo', {
+      url: '/myinfo',
+      templateUrl: 'src/public/myinfo/myinfo.html',
+      controller: 'MyInfoController',
+      controllerAs: 'myInfoCtrl',
       resolve: {
-        info: ['InfoService', function(InfoService) {
-          return InfoService.getInfo();
+        info: ['MyInfoService', function(MyInfoService) {
+          return MyInfoService.getInfo();
         }]
       }
     });
